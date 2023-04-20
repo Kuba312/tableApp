@@ -1,0 +1,12 @@
+<app-material-table
+  [tableData]="tableDataWithoutPagination$ | async"
+  (tableDataLoaded)="tableLoaded($event)"
+  (pageChange)="pageChange($event)"
+  [paginate]="paginate"
+></app-material-table>
+
+<div class="fetch-data-btn">
+  <button mat-raised-button color="primary" (click)="fetch()" [disabled]="pending">
+    {{ !paginate ? "Table with pagination" : "Table with virtual scrolling" }}
+  </button>
+</div>
