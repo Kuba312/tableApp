@@ -35,6 +35,6 @@ export class AppComponent implements OnInit {
 
   // emit page event if pagination is enabled (for endpoint with pagination)
   pageChange(event: PageEvent) {
-   // ...
+    // ...
   }
 }
