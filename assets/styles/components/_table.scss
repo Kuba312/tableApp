@@ -1,0 +1,91 @@
+@use "../abstracts" as a;
+
+// I had to use '!important' to overwrite default styles of Angular Material!
+
+.table-section {
+  margin: 5rem 2rem;
+  box-shadow: 0 0 1rem a.$box-shadow-table-color;
+}
+
+.mdc-data-table {
+  height: fit-content;
+  border-collapse: collapse;
+  box-shadow: 0 0 1rem a.$box-shadow-table-color;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+
+  &__header-row {
+    background-color: a.$header-table-background-color !important;
+  }
+
+  &__row:hover {
+    background-color: a.$row-hover-background-color !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &__header-cell,
+  &__cell {
+    padding: 0.8rem !important;
+    font-size: 1.4rem !important;
+    text-align: left !important;
+  }
+}
+
+.hidden-headers {
+  display: none !important;
+}
+
+.wrapper {
+  height: 400px;
+}
+
+@include a.respond(tab-port) {
+  .mat-mdc-table {
+    border: 0;
+    vertical-align: middle;
+  }
+  .mdc-data-table {
+    &__row {
+      border-bottom: 0.7rem solid a.$row-border-bottom-table-color !important;
+      display: block;
+      height: 320px !important;
+
+      &:last-child > * {
+        border-bottom: 1px solid a.$row-border-bottom-table-color !important;
+        &:last-child {
+          border-bottom: none !important;
+        }
+      }
+    }
+
+    &__cell {
+      border-bottom: 0.1rem solid a.$row-border-bottom-table-color !important;
+      font-size: 1rem;
+      text-align: right;
+      font-weight: bold;
+      margin-bottom: 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem !important;
+
+      &::before {
+        content: attr(id);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        font-size: 1.6rem;
+      }
+
+      &:last-child {
+        border-bottom: 0 !important;
+      }
+      &:first-child {
+        margin-top: 4%;
+      }
+    }
+  }
+}
