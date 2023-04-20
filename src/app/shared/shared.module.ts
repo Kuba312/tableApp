@@ -11,14 +11,12 @@ const DECLARATIONS = [
     SafeHtmlPipe
 ]   
 
-
 const SHARED_MODULES = [
     CommonModule,
     MaterialModule,
     ScrollingModule,
     TableVirtualScrollModule,
 ]
-
 
 @NgModule({
     declarations: DECLARATIONS,

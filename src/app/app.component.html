@@ -6,7 +6,12 @@
 ></app-material-table>
 
 <div class="fetch-data-btn">
-  <button mat-raised-button color="primary" (click)="fetch()" [disabled]="pending">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="fetch()"
+    [disabled]="pending"
+  >
     {{ !paginate ? "Table with pagination" : "Table with virtual scrolling" }}
   </button>
 </div>
