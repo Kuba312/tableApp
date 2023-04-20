@@ -12,8 +12,6 @@ export const MATERIAL_MODULES = [
     MatPaginatorModule,
 ]
 
-
-
 @NgModule({
     imports: MATERIAL_MODULES,
     exports: MATERIAL_MODULES,
