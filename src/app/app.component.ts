@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
     this.tableDataWithoutPagination$ = this.dataService.fetchTableData();
   }
 
-
   // To fetch mock data again
   fetch() {
     this.paginate = !this.paginate;

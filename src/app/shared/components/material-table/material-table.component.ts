@@ -34,7 +34,6 @@ export class MaterialTableComponent implements OnChanges, OnInit, OnDestroy {
   @Output() pageChange = new EventEmitter<PageEvent>();
   @Output() tableDataLoaded = new EventEmitter<boolean>();
 
-
   displayedColumns: string[] | undefined;
   tvsItemSize: number;
   subscription: Subscription;
@@ -96,7 +95,6 @@ export class MaterialTableComponent implements OnChanges, OnInit, OnDestroy {
       });
   }
 
-
   private screenSizeObserver() {
     this.subscription = this.responsive.observe([...this.breakpoints])
       .subscribe(result => {
@@ -110,7 +108,6 @@ export class MaterialTableComponent implements OnChanges, OnInit, OnDestroy {
       });
   }
 
-
   private initializeInitialStateOfTable() {
     if (!this.paginate) {
       this.dataSource = new TableVirtualScrollDataSource([]);
@@ -118,7 +115,5 @@ export class MaterialTableComponent implements OnChanges, OnInit, OnDestroy {
       this.dataSource = new MatTableDataSource([]);
     }
   }
-
-
 
 }
